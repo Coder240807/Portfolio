@@ -110,7 +110,6 @@
 }
 
 
-/* Card Container Setup */
 .intro-card {
   font-family: 'Courier New', Courier, monospace;
   background: rgba(8, 18, 12, 0.75);
@@ -194,4 +193,212 @@
     transform: scale(1) translateY(0);
     filter: blur(0);
   }
+}
+
+/* --- SKILLS SECTION CONTAINER --- */
+.skills {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 2rem;
+
+  background-image: url("bg3.jpg"); 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.skills-header {
+  margin-bottom: 4rem;
+  text-align: center;
+  position: relative;
+}
+
+.terminal-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+
+  /* Dual-layer Matrix Green Glow */
+  text-shadow: 
+    0 0 10px rgba(0, 255, 102, 0.7),
+    0 0 20px rgba(0, 255, 102, 0.3);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Diagonal Wave Arrow Indicator */
+.terminal-title::before {
+  content: "\2198"; /* South East Arrow */
+  color: #00ff66;
+  font-size: 0.9em;
+  display: inline-block;
+  text-shadow: 0 0 12px #00ff66;
+
+  animation: pulseDiagonal 2s ease-in-out infinite alternate;
+}
+
+/* Green Shell Prompt Bracket (>) */
+.terminal-prompt {
+  color: #00ff66;
+  text-shadow: 0 0 8px #00ff66;
+}
+
+/* Blinking Terminal Underscore Cursor */
+.terminal-cursor {
+  color: #00ff66;
+  font-weight: 900;
+  animation: blinkCursor 0.8s infinite steps(2, start);
+  text-shadow: 0 0 8px #00ff66;
+}
+
+/* Terminal Subtitle / Code Comment */
+.terminal-subtitle {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  color: rgba(0, 255, 102, 0.7);
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* --- HEADING ANIMATIONS --- */
+@keyframes pulseDiagonal {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(4px, 4px);
+    opacity: 1;
+    text-shadow: 0 0 16px #00ff66;
+  }
+}
+
+@keyframes blinkCursor {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- GRID CONTAINER --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+/* --- CARD BASE STYLES --- */
+.skill-card {
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(5, 15, 8, 0.82); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 102, 0.25);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+
+  transition: 
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: #00ff66;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
+}
+
+.skill-card h3 {
+  color: #00ff66;
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
+}
+
+.skill-card p {
+  color: #d1ffd9;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* --- STAGGERED LAYOUT (DESKTOP) --- */
+@media (min-width: 768px) {
+  .card-up {
+    transform: translateY(-25px);
+  }
+
+  .card-down {
+    transform: translateY(25px);
+  }
+
+  .skill-card.card-up:hover {
+    transform: translateY(-35px) scale(1.03);
+  }
+
+  .skill-card.card-down:hover {
+    transform: translateY(15px) scale(1.03);
+  }
+}
+
+/* Mobile Fallback Hover */
+@media (max-width: 767px) {
+  .skill-card:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+/* --- NEON HOVER HIGHLIGHT --- */
+.skill-card:hover {
+  background: rgba(10, 26, 15, 0.92);
+  border-color: #00ff66;
+  box-shadow: 
+    0 0 30px rgba(0, 255, 102, 0.4),
+    inset 0 0 15px rgba(0, 255, 102, 0.15);
+}
+
+/* Top Accent Line */
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ff66, transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
 }
