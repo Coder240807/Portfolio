@@ -687,7 +687,7 @@
   animation-range: entry 0% exit 100%;
 }
 
-/* --- CONTACT INFO BODY TYPOGRAPHY --- */
+
 .info-body h3 {
   color: #00ff66;
   font-family: 'Courier New', Courier, monospace;
@@ -789,4 +789,34 @@
   font-family: 'Courier New', Courier, monospace;
   color: rgba(0, 255, 102, 0.7);
   font-size: 0.85rem;
+}
+
+
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 4px;
+  height: 100vh;
+  border-radius: 2px;
+  background: #00ff66; 
+  z-index: 100;
+  
+  box-shadow: 
+    0 0 8px #00ff66,
+    0 0 16px rgba(0, 255, 102, 0.6);
+
+  
+  transform-origin: top;
+  animation: fill linear;
+  animation-timeline: scroll();
+}
+
+@keyframes fill {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }
