@@ -240,7 +240,7 @@
 
 
 .terminal-title::before {
-  content: "\2198"; /* South East Arrow */
+  content: "\2198"; 
   color: #00ff66;
   font-size: 0.9em;
   display: inline-block;
@@ -249,13 +249,13 @@
   animation: pulseDiagonal 2s ease-in-out infinite alternate;
 }
 
-/* Green Shell Prompt Bracket (>) */
+
 .terminal-prompt {
   color: #00ff66;
   text-shadow: 0 0 8px #00ff66;
 }
 
-/* Blinking Terminal Underscore Cursor */
+
 .terminal-cursor {
   color: #00ff66;
   font-weight: 900;
@@ -392,7 +392,7 @@
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .skill-card:hover {
     transform: translateY(-8px) scale(1.02);
   }
@@ -420,4 +420,223 @@
 
 .skill-card:hover::before {
   opacity: 1;
+}
+
+
+.projects {
+  width: 100%;
+  min-height: 100vh;
+  padding: 5rem 2rem 4rem 2rem;
+
+  background: 
+    radial-gradient(circle at 50% 20%, rgba(0, 255, 102, 0.12) 0%, transparent 60%),
+    linear-gradient(180deg, #020804 0%, #05140a 50%, #020804 100%);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-header {
+  margin-bottom: 4rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.projects-header-card {
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(5, 15, 8, 0.82); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 1.5rem 2.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  box-shadow: 
+    0 0 25px rgba(0, 255, 102, 0.15),
+    0 0 20px rgba(0, 0, 0, 0.6);
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  /* Scroll-Driven Animation */
+  animation: headerScrollPhase linear both;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%;
+}
+
+/* --- PROJECTS GRID LAYOUT --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  width: 100%;
+  padding-bottom: 2.5rem;
+}
+
+/* --- PROJECT CARD BASE STYLES --- */
+.project-card {
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(5, 15, 8, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 102, 0.25);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  /* Scroll-Driven Entry/Exit Animation */
+  animation: cardScrollPhase linear both;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%;
+
+  transition: 
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Terminal Window Header Bar */
+.project-header-bar {
+  background: rgba(0, 255, 102, 0.08);
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid rgba(0, 255, 102, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.project-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 255, 102, 0.4);
+}
+
+.project-path {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  color: #00ff66;
+  opacity: 0.8;
+}
+
+/* Card Body Content */
+.project-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-title {
+  color: #00ff66;
+  font-size: 1.35rem;
+  margin: 0 0 0.8rem 0;
+  text-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
+}
+
+.project-desc {
+  color: #d1ffd9;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 1.2rem 0;
+  flex-grow: 1;
+}
+
+/* Tag Badges */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(0, 255, 102, 0.1);
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  color: #00ff66;
+}
+
+/* Action Buttons */
+.project-links {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.project-btn {
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 255, 102, 0.4);
+  color: #00ff66;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  background: rgba(0, 255, 102, 0.2);
+  border-color: #00ff66;
+  box-shadow: 0 0 12px rgba(0, 255, 102, 0.4);
+  color: #ffffff;
+}
+
+.project-btn.primary {
+  background: rgba(0, 255, 102, 0.15);
+  border-color: #00ff66;
+}
+
+.project-btn.primary:hover {
+  background: #00ff66;
+  color: #050f08;
+  font-weight: 700;
+  box-shadow: 0 0 15px #00ff66;
+}
+
+.btn-arrow {
+  font-size: 0.9em;
+}
+
+/* --- STAGGERED LAYOUT & HOVER EFFECTS --- */
+@media (min-width: 768px) {
+  .projects-grid .card-up {
+    transform: translateY(-20px);
+  }
+
+  .projects-grid .card-down {
+    transform: translateY(20px);
+  }
+
+  .project-card.card-up:hover {
+    transform: translateY(-30px) scale(1.02);
+  }
+
+  .project-card.card-down:hover {
+    transform: translateY(10px) scale(1.02);
+  }
+}
+
+.project-card:hover {
+  background: rgba(10, 26, 15, 0.92);
+  border-color: #00ff66;
+  box-shadow: 
+    0 0 30px rgba(0, 255, 102, 0.35),
+    inset 0 0 15px rgba(0, 255, 102, 0.1);
 }
