@@ -142,7 +142,7 @@
 
   animation: slideFromLeft linear forwards;
   animation-timeline: view();
-  animation-range: entry 10% cover 40%; 
+  animation-range: entry 0% entry 100%; 
 }
 
 @keyframes slideFromLeft {
@@ -173,7 +173,7 @@
 
   animation: popInImage linear forwards;
   animation-timeline: view();
-  animation-range: entry 20% cover 45%;
+  animation-range: entry 10% entry 90%;
 }
 
 .intro-content h2 {
@@ -218,7 +218,7 @@
   /* Scroll entry for the right-side graphic */
   animation: slideFromRight linear forwards;
   animation-timeline: view();
-  animation-range: entry 10% cover 40%;
+  animation-range: entry 0% entry 100%;
 }
 
 .tech-ecosystem-img {
