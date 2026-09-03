@@ -114,7 +114,6 @@
   font-family: 'Courier New', Courier, monospace;
   background: rgba(8, 18, 12, 0.75);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   
   padding: 2rem;
   border-radius: 12px;
@@ -496,7 +495,7 @@
   flex-direction: column;
   overflow: hidden;
 
-  /* Scroll-Driven Entry/Exit Animation */
+  
   animation: cardScrollPhase linear both;
   animation-timeline: view();
   animation-range: entry 0% exit 100%;
@@ -507,7 +506,7 @@
     box-shadow 0.4s ease;
 }
 
-/* Terminal Window Header Bar */
+
 .project-header-bar {
   background: rgba(0, 255, 102, 0.08);
   padding: 0.6rem 1rem;
@@ -531,7 +530,7 @@
   opacity: 0.8;
 }
 
-/* Card Body Content */
+
 .project-body {
   padding: 1.5rem;
   display: flex;
@@ -554,7 +553,7 @@
   flex-grow: 1;
 }
 
-/* Tag Badges */
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -571,7 +570,7 @@
   color: #00ff66;
 }
 
-/* Action Buttons */
+
 .project-links {
   display: flex;
   gap: 0.8rem;
@@ -614,7 +613,7 @@
   font-size: 0.9em;
 }
 
-/* --- STAGGERED LAYOUT & HOVER EFFECTS --- */
+
 @media (min-width: 768px) {
   .projects-grid .card-up {
     transform: translateY(-20px);
@@ -639,4 +638,155 @@
   box-shadow: 
     0 0 30px rgba(0, 255, 102, 0.35),
     inset 0 0 15px rgba(0, 255, 102, 0.1);
+}
+
+.contact {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 5rem 2rem 4rem 2rem;
+
+  background: 
+    radial-gradient(circle at 50% 20%, rgba(0, 255, 102, 0.12) 0%, transparent 60%),
+    linear-gradient(180deg, #020804 0%, #05140a 50%, #020804 100%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-header {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.contact-card {
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(5, 15, 8, 0.85);
+  backdrop-filter: blur(10px);
+
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 102, 0.25);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+
+  overflow: hidden;
+
+ 
+  animation: cardScrollPhase linear both;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%;
+}
+
+/* --- CONTACT INFO BODY TYPOGRAPHY --- */
+.info-body h3 {
+  color: #00ff66;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.35rem;
+  margin: 0 0 0.8rem 0;
+
+  /* Neon text glow matching project/skill headings */
+  text-shadow: 
+    0 0 8px rgba(0, 255, 102, 0.6),
+    0 0 16px rgba(0, 255, 102, 0.3);
+}
+
+.info-body p {
+  color: #d1ffd9; /* High-contrast light mint green text */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  opacity: 0.95;
+}
+
+.contact-form, .info-body {
+  padding: 1.8rem;
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-group label {
+  color: #00ff66;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.input-group input,
+.input-group textarea {
+  background: rgba(0, 255, 102, 0.05);
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #00ff66;
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+}
+
+.submit-btn {
+  width: 100%;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.social-btn {
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  color: #00ff66;
+  background: rgba(0, 255, 102, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background: rgba(0, 255, 102, 0.2);
+  border-color: #00ff66;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+}
+
+.portfolio-footer {
+  width: 100%;
+  padding: 1.5rem;
+  text-align: center;
+  background: #020804;
+  border-top: 1px solid rgba(0, 255, 102, 0.2);
+  font-family: 'Courier New', Courier, monospace;
+  color: rgba(0, 255, 102, 0.7);
+  font-size: 0.85rem;
 }

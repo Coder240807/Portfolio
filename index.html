@@ -80,7 +80,6 @@
       </div>
 
       <div class="projects-grid">
-        <!-- Project 1 (Up) -->
         <article class="project-card card-up">
           <div class="project-header-bar">
             <span class="project-dot"></span>
@@ -190,5 +189,76 @@
         </article>
       </div>
     </section>
+
+    <section class="contact">
+  <div class="contact-header">
+    <div class="contact-header-card">
+      <h2 class="terminal-title">
+        <span class="terminal-prompt">&gt;</span> Execute Contact<span class="terminal-cursor">_</span>
+      </h2>
+      <p class="terminal-subtitle">// INITIALIZE_DIRECT_COMMUNICATION</p>
+    </div>
+  </div>
+
+  <div class="contact-container">
+    <!-- Contact Form Card -->
+    <div class="contact-card">
+      <div class="terminal-header-bar">
+        <span class="project-dot"></span>
+        <span class="project-dot"></span>
+        <span class="project-dot"></span>
+        <span class="project-path">~/send-message.sh</span>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="input-group">
+          <label for="name">&gt; USER_NAME:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name..." required />
+        </div>
+        <div class="input-group">
+          <label for="email">&gt; USER_EMAIL:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email..." required />
+        </div>
+        <div class="input-group">
+          <label for="message">&gt; PAYLOAD_MESSAGE:</label>
+          <textarea id="message" name="message" rows="4" placeholder="Type message here..." required></textarea>
+        </div>
+        <button type="submit" class="project-btn primary submit-btn">
+          <span class="btn-arrow">&searr;</span> Transmit Data
+        </button>
+      </form>
+    </div>
+
+  
+    <div class="contact-card info-card">
+      <div class="terminal-header-bar">
+        <span class="project-dot"></span>
+        <span class="project-dot"></span>
+        <span class="project-dot"></span>
+        <span class="project-path">~/social-nodes</span>
+      </div>
+      <div class="info-body">
+        <h3>Connect Across Terminals</h3>
+        <p>Feel free to reach out for collaborations, project inquiries, or technical discussion.</p>
+        
+        <div class="social-links">
+          <a href="https://github.com/Coder240807" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <span class="btn-arrow">&searr;</span> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/vigya-verma-60b6a9274/" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <span class="btn-arrow">&searr;</span> LinkedIn
+          </a>
+          <a href="mailto:verma.vigya2007@gmail.com" class="social-btn">
+            <span class="btn-arrow">&searr;</span> Direct Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="portfolio-footer">
+  <p>&copy; 2026 Vigya Verma. All systems operational <span class="terminal-cursor">_</span></p>
+</footer>
   </body>
 </html>
