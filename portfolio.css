@@ -195,7 +195,7 @@
   }
 }
 
-/* --- SKILLS SECTION CONTAINER --- */
+
 .skills {
   width: 100%;
   min-height: 100vh;
@@ -228,7 +228,7 @@
   text-transform: uppercase;
   margin: 0 0 0.5rem 0;
 
-  /* Dual-layer Matrix Green Glow */
+  
   text-shadow: 
     0 0 10px rgba(0, 255, 102, 0.7),
     0 0 20px rgba(0, 255, 102, 0.3);
@@ -238,7 +238,7 @@
   gap: 0.5rem;
 }
 
-/* Diagonal Wave Arrow Indicator */
+
 .terminal-title::before {
   content: "\2198"; /* South East Arrow */
   color: #00ff66;
@@ -263,7 +263,7 @@
   text-shadow: 0 0 8px #00ff66;
 }
 
-/* Terminal Subtitle / Code Comment */
+
 .terminal-subtitle {
   font-family: 'Courier New', Courier, monospace;
   font-size: clamp(0.85rem, 1.5vw, 1rem);
@@ -273,7 +273,7 @@
   text-transform: uppercase;
 }
 
-/* --- HEADING ANIMATIONS --- */
+
 @keyframes pulseDiagonal {
   0% {
     transform: translate(0, 0);
@@ -295,7 +295,6 @@
   }
 }
 
-/* --- GRID CONTAINER --- */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -305,12 +304,10 @@
   padding-bottom: 2rem;
 }
 
-/* --- CARD BASE STYLES --- */
 .skill-card {
   font-family: 'Courier New', Courier, monospace;
   background: rgba(5, 15, 8, 0.82); 
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 
   padding: 2rem 1.5rem;
   border-radius: 12px;
@@ -324,11 +321,36 @@
   position: relative;
   overflow: hidden;
 
-  transition: 
-    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.4s ease,
-    box-shadow 0.4s ease,
-    background 0.4s ease;
+  animation: cardScrollPhase linear both;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%;
+}
+
+@keyframes cardScrollPhase {
+  
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(80px);
+    filter: blur(8px);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+
+  
+  100% {
+    opacity: 0;
+    transform: scale(0.85) translateY(-60px);
+    filter: blur(6px);
+  }
 }
 
 .card-icon {
@@ -351,7 +373,6 @@
   line-height: 1.5;
 }
 
-/* --- STAGGERED LAYOUT (DESKTOP) --- */
 @media (min-width: 768px) {
   .card-up {
     transform: translateY(-25px);
@@ -370,14 +391,13 @@
   }
 }
 
-/* Mobile Fallback Hover */
+
 @media (max-width: 767px) {
   .skill-card:hover {
     transform: translateY(-8px) scale(1.02);
   }
 }
 
-/* --- NEON HOVER HIGHLIGHT --- */
 .skill-card:hover {
   background: rgba(10, 26, 15, 0.92);
   border-color: #00ff66;
@@ -386,7 +406,6 @@
     inset 0 0 15px rgba(0, 255, 102, 0.15);
 }
 
-/* Top Accent Line */
 .skill-card::before {
   content: "";
   position: absolute;
